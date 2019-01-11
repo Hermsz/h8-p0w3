@@ -30,6 +30,7 @@ console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'c
 
 function groupAnimals(animal) {
   var zoo = []
+  animal = animal.sort(function(a,b){return a > b})
 
   for( var i = 0; i <= animal.length - 1; i++ ) {
       var temp = [] // temp di sini karena biar dia reset setelah dapat huruf hewan yang sama semua
@@ -39,7 +40,6 @@ function groupAnimals(animal) {
           if( animal[i][0] === zoo[j][0][0]) { // 
               zoo[j].push(animal[i]) // push animal to array zoo
               cageExist = true // 
-              
           }
       }
 
@@ -49,13 +49,14 @@ function groupAnimals(animal) {
       }
 
   }
-        //mengubah array tanpa menggunakan magic .sort
-        var temporary = 0
-        temporary = zoo[1]
-        zoo[1] = zoo[0]
-        zoo[0] = temporary
+//   console.log(zoo)
+//         //mengubah array tanpa menggunakan magic .sort
+//         var temporary = 0
+//         temporary = zoo[1]
+//         zoo[1] = zoo[0]
+//         zoo[0] = temporary
         
-  return zoo
+  return (zoo)
 }
 
 console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil' ]));
